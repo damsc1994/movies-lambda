@@ -67,7 +67,7 @@ public class NomiMovies implements IMovies{
 	@Override
 	public LocalTime getAverageDurationTime(List<Movie> movies) {
 		return LocalTime.ofSecondOfDay((int) movies.stream()
-				.mapToLong(mv -> mv.getDuration().toSecondOfDay()).average().getAsDouble());
+				 .mapToLong(mv -> mv.getDuration().toSecondOfDay()).average().getAsDouble());
 	}
 
 	//Ejercicio 11
