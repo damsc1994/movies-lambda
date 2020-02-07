@@ -66,8 +66,8 @@ public class NomiMovies implements IMovies{
 	//Ejercicio 10
 	@Override
 	public LocalTime getAverageDurationTime(List<Movie> movies) {
-		return LocalTime.ofNanoOfDay((long) movies.stream()
-				.mapToLong(mv -> mv.getDuration().toNanoOfDay()).average().getAsDouble());
+		return LocalTime.ofSecondOfDay((int) movies.stream()
+				.mapToLong(mv -> mv.getDuration().toSecondOfDay()).average().getAsDouble());
 	}
 
 	//Ejercicio 11
@@ -83,8 +83,10 @@ public class NomiMovies implements IMovies{
 				.limit(3).collect(Collectors.toList());
 	}
 
+	//Ejercicio 13
 	@Override
 	public long getCountMovieGenderDrama(List<Movie> movies) {
 		return movies.stream().filter(mv -> "Drama".equalsIgnoreCase(mv.getGender())).count();
 	}
+	
 }
